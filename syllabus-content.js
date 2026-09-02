@@ -157,3 +157,25 @@ const SYL_CONTENT = {
     ]
   }
 };
+
+// Flatten SYL_CONTENT into the two flat arrays the Syllabus Drill games actually
+// read from: SYL_ITEMS (one entry per dot point) and SYL_SUBS (one entry per
+// content area). Every dot point gets a unique id and inherits its topic/sub.
+const SYL_ITEMS = [];
+const SYL_SUBS = [];
+(function buildSylFlat(){
+  let n = 0;
+  for (const topic in SYL_CONTENT) {
+    for (const sub in SYL_CONTENT[topic]) {
+      const subKey = topic + '|' + sub;
+      SYL_SUBS.push({ topic: topic, sub: sub, key: subKey });
+      SYL_CONTENT[topic][sub].forEach(function(item){
+        SYL_ITEMS.push({
+          id: 'syl-' + (n++),
+          topic: topic, sub: sub, subKey: subKey,
+          t: item.t, k: item.k || [], x: !!item.x
+        });
+      });
+    }
+  }
+})();
