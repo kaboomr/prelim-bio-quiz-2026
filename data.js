@@ -624,8 +624,8 @@ const QUESTIONS = [
     "img": "G23_q07.png",
     "w": 1479,
     "h": 544,
-    "ans": ["A"],
-    "expl": "Since the labelled oxygen from water (H2O^18) ends up in the glucose product, this shows glucose's oxygen originates from water, not CO2."
+    "ans": ["B"],
+    "expl": "The labelled water produces labelled O₂ gas (O¹⁸₂) — showing the oxygen gas released in photosynthesis comes from water, not from glucose. Since that oxygen leaves as gas rather than being incorporated into the sugar, glucose's own oxygen atoms must come from the other reactant, carbon dioxide."
   },
   {
     "id": "G23-Q8",
